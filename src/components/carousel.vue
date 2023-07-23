@@ -47,6 +47,7 @@ onUnmounted(() => {
 </script>
 
 <template>
+    <h2 class="text-center text-secondary">Slider Here</h2>
     <div @mouseover="stopSlide" @mouseleave="startSlide" id="carouselExampleCaptions" class="carousel">
         <ol class="carousel-indicators">
             <li @click="activeImage = index" v-for="(item, index) in items" :key="index"
@@ -57,9 +58,7 @@ onUnmounted(() => {
             <div class="carousel-item active">
                 <img :src="items[activeImage].image" class="d-block w-100 img img-responsive" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <p>
-                        {{ items[activeImage].caption }}
-                    </p>
+                    <p> {{ items[activeImage].caption }}</p>
                 </div>
             </div>
         </div>
@@ -74,4 +73,9 @@ onUnmounted(() => {
     </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.carousel-inner {
+    width: 800px;
+    height: 500px;
+}
+</style>
